@@ -128,6 +128,39 @@ public:
         }
         cout << "Number of nodes: " << count << endl;
     }    
+    void sum()
+    {
+        int sum = 0;
+        node *x = head;
+        while(x != NULL)
+        {
+            sum += x->getdata();
+            x = x->getnext();
+        }
+        cout<<"sum: "<< sum << endl;
+    }
+    void maximum()
+    {
+        int max = -9999;
+        node *x = head;
+            while(x != NULL)
+            {
+                if(x->getdata() > max)max = x->getdata();
+                x = x->getnext();
+            }
+        cout << "Maximum: " << max << endl;    
+    }
+    void minimum()
+    {
+        int min = 9999;
+        node *x = head;
+            while(x != NULL)
+            {
+                if(x->getdata() < min)min = x->getdata();
+                x = x->getnext();
+            }
+        cout << "Minimum: " << min << endl;    
+    }
 };
 
 int main()
@@ -145,6 +178,9 @@ int main()
         cout << "5 To display the list" << endl;
         cout << "6 TO display reverse " << endl;
         cout << "7 To count number of nodes(Elements)" << endl;
+        cout << "8 To get the sum" << endl;
+        cout << "9 To get the maximum data" << endl;
+        cout << "10 To get the minimum data" << endl;
         cout << "0 To terminate the program" << endl;
         cout << "Choice: ";
         cin >> choice;
@@ -173,7 +209,16 @@ int main()
             break;
         case 7:
             mylist.countNodes();
-            break;    
+            break;
+        case 8:
+            mylist.sum();
+            break;
+        case 9:
+            mylist.maximum();
+            break;
+        case 10:
+            mylist.minimum();
+            break;                                 
         default:
             cout << "Number entered not correct" << endl;
             break;
