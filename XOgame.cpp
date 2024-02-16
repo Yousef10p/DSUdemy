@@ -59,7 +59,7 @@ bool winner(int field[3][3])
 bool fillField(int place, int field[3][3], int content)
 {
     bool check;
-    
+
     do
     {
         check = true;
@@ -137,13 +137,13 @@ bool fillField(int place, int field[3][3], int content)
 }
 bool FieldIsFull(int field[3][3])
 {
-    //bool check = true;//field is full and no place to enter = ture
+    // bool check = true;//field is full and no place to enter = ture
 
-    for(int i = 0; i < 3; i++)
+    for (int i = 0; i < 3; i++)
     {
-        for(int j =0 ;j < 3; j++)
+        for (int j = 0; j < 3; j++)
         {
-            if(field[i][j] == 0)
+            if (field[i][j] == 0)
             {
                 return false;
                 break;
@@ -157,16 +157,24 @@ int main()
 {
     int field[3][3];
     int player, win = 0;
-    for (int i = 0; i < 3; i++)
+    for (int i = 0, counter = 1; i < 3; i++)
     {
         for (int j = 0; j < 3; j++)
+        {
             field[i][j] = 0;
+            if (j != 2)
+                cout << counter++ << " | ";
+            else
+                cout << counter++ << endl;
+        }
+        if (i != 2)
+            cout << "----------" << endl;
     }
-
-    displayField(field);
+    cout << endl
+         << endl;
     do
     {
-        
+
         cout << "x player enter place: ";
         cin >> player;
         if (fillField(player, field, 1))
@@ -176,9 +184,9 @@ int main()
             break;
         }
 
-        if(FieldIsFull(field))
+        if (FieldIsFull(field))
         {
-            win  = 0;
+            win = 0;
             cout << "Tied - Game Over" << endl;
             break;
         }
