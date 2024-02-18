@@ -157,6 +157,13 @@ int main()
 {
     int field[3][3];
     int player, win = 0;
+    string player1,player2;
+    cout << "Player 1 enter your name: ";
+    cin >> player1;
+    cout << "Player 2 enter your name: ";
+    cin >> player2;
+    cout << endl << endl;
+
     for (int i = 0, counter = 1; i < 3; i++)
     {
         for (int j = 0; j < 3; j++)
@@ -175,11 +182,11 @@ int main()
     do
     {
 
-        cout << "x player enter place: ";
+        cout << player1 << " enter place: ";
         cin >> player;
         if (fillField(player, field, 1))
         {
-            cout << "player 1 win" << endl;
+            cout << player1 << " win" << endl;
             win = 1;
             break;
         }
@@ -191,11 +198,11 @@ int main()
             break;
         }
 
-        cout << "o player enter place: ";
+        cout << player2 << " enter place: ";
         cin >> player;
         if (fillField(player, field, 2))
         {
-            cout << "player 2 win" << endl;
+            cout << player2 << " win" << endl;
             win = 2;
             break;
         }
