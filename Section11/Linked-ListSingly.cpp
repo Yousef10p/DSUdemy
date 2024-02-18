@@ -277,13 +277,67 @@ public:
             }
         }
     }
+    
+    void concateList(list L2)///////////////////////////////////////////////////////////////////////////////////not written in main func
+    {
+        node *x = head;
+        while(x->getnext() != NULL)
+        {
+            x = x->getnext();
+        } 
+        x->setnext(L2.head);
+    }
+
+    void merge(list L)///////////////////////////////////////////////////////////////////////////////////not written in main func
+    //this will concate two sorted lists
+    {
+        node* nfirst, *nlast,*firstHead = head,*secondHead = L.head;//for the new list
+        if(firstHead->getdata() < secondHead->getdata())
+        {
+            nfirst = firstHead,nlast = firstHead;
+            firstHead = firstHead->getnext();
+            nlast->setnext(NULL);
+        }
+        else
+        {
+           nfirst = secondHead,nlast = secondHead;
+            secondHead = secondHead->getnext();
+            nlast->setnext(NULL);
+             
+        }
+
+        while(firstHead != NULL && secondHead != NULL)
+        {
+            if(firstHead->getdata() < secondHead->getdata())
+            {
+                nlast->setnext(firstHead);
+                nlast = nlast->getnext();
+                firstHead = firstHead->getnext();
+                nlast->setnext(NULL);
+
+            }
+            else
+            {
+                nlast->setnext(secondHead);
+                nlast = nlast->getnext();
+                secondHead = secondHead->getnext();
+                nlast->setnext(NULL); 
+            }
+        }
+        if(firstHead != NULL)nlast->
+            setnext(firstHead);
+        else 
+            nlast->setnext(secondHead);
+    }
+
 };
 
+    
 int main()
 {
     list mylist;
     int choice = 1, input;
-
+    
     do
     {
         cout << "--------------------------------------------------" << endl;
@@ -392,4 +446,5 @@ int main()
     cout << endl;
     cout << endl;
     cout << "@US10F" << endl;
+    //*/
 }
