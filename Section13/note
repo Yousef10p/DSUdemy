@@ -1,0 +1,17 @@
+This section talks about Stack data structure 
+
+Recursion always use stack 
+stack structure
+
+.data
+    space to store the data
+    pointer to the top of the stack(last insearted element)
+.operations//the most important ones
+    push(x) 
+    pop
+    peek(index)
+`   stackTop()
+    isEmptey()
+    isFull()    
+
+ can be implemented using array or linked-list

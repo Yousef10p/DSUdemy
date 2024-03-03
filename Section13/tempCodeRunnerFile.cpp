@@ -1,0 +1,1 @@
+  cout << user << endl;

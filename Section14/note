@@ -1,0 +1,17 @@
+QUEUE data structure can be implemented using array or linked-list
+QUEUE can be 3 types
+1- single pointer 
+this have pointer to the place of the last insearted one but how to delete the first one ?
+always we delete the first element in the array or linked list after deleting shift so the next one will take 
+the place to be deleted next time
+ex:-
+            4 17 8 9 13 (14) pointer point at 14 element but to delete we should delete the first element 4
+            Then we shift the element one place to the left
+            17 8 9 13 (14)
+
+2- 2 pointers one for insearting and one for deleting
+the list is empety wehn the two pointers pointing at the same location 
+
+
+
+there is an important and efficient one called circular and that one i will implement here
