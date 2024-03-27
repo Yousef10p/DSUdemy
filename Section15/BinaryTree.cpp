@@ -83,6 +83,9 @@ public:
     void Levelorder(Node *p);
     int Height() { return Height(root); }
     int Height(Node *p);
+    int countNodes(){return countNodes(root);}
+    int countNodes(Node *p);
+
 };
 void Tree::CreateTree()
 {
@@ -179,6 +182,13 @@ int Tree::Height( Node *root)
     else
         return y + 1;
 }
+
+int Tree :: countNodes(Node *p)
+{
+    if(p)
+        return countNodes(p->lchild) + countNodes(p->rchild) + 1;
+}
+
 
 
 
